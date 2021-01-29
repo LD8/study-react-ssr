@@ -19,7 +19,13 @@ module.exports = {
             // 加载器【预制】，加载之前对文件进行转换
             presets: [
               // 转换高级 JS 语法 -> 低级 JS 语法
-              '@babel/preset-env',
+              [
+                '@babel/preset-env',
+                // 预制配置 polyfill ???
+                {
+                  useBuiltIns: 'usage',
+                },
+              ],
               // 转换 React 的 JSX 语法 -> createElement('div', {id: 'root'}) 的调用
               '@babel/preset-react',
             ],
