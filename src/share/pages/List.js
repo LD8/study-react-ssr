@@ -18,6 +18,15 @@ const List = ({ user, dispatch }) => {
   )
 }
 
+// 此组件页面刷新：需要告知服务端有数据要提前加载
+export const loadData = (store) => {
+  // 返回一个 Promise，在 server 返回数据前调用，并进行数据拼接
+  return store.dispatch(fetchUser())
+}
+
 const mapStateToProps = (state) => ({ user: state.user })
 
-export default connect(mapStateToProps)(List)
+export default {
+  component: connect(mapStateToProps)(List),
+  loadData
+}
