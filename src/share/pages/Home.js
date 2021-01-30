@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div onClick={() => console.log('HOME')}>
-      Home Running!!!<Link to="/list">to List</Link>
+      <h1>Home Running!!!</h1>
+      <Link to="/list">List</Link>
     </div>
   )
 }

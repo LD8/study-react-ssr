@@ -1,9 +1,9 @@
 import { SAVE_USER } from '../actions/user.action'
 
-export default (state = [], action) => {
+export default (state = [], action = { type: '', action: '' }) => {
   switch (action.type) {
     case SAVE_USER:
-      return action.payload.data
+      return action.payload
     default:
       return state
   }

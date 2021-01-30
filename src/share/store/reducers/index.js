@@ -3,5 +3,5 @@ import userReducer from './user.reducer'
 
 // { user: [] }
 export default combineReducers({
-  user: userReducer(),
+  user: userReducer,
 })

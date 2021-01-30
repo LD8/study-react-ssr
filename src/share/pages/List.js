@@ -8,7 +8,7 @@ const List = ({ user, dispatch }) => {
   }, [])
   return (
     <div>
-      List Page Running
+      <h1>List Page Running</h1>
       <ul>
         {user.map((u) => (
           <li key={u.id}>{u.name}</li>

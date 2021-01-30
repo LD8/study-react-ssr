@@ -1,6 +1,7 @@
 module.exports = {
   // 开发模式
   mode: 'development',
+  devtool: 'source-map',
   module: {
     // 制定打包规则
     rules: [
