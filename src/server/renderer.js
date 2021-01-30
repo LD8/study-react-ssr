@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 import routes from '../share/routes'
 import { Provider } from 'react-redux'
+import serialize from 'serialize-javascript'
 
 export default (req, store) => {
   const content = renderToString(
@@ -15,7 +16,9 @@ export default (req, store) => {
   )
 
   // 获取初始值
-  const initialState = JSON.stringify(store.getState())
+  // const initialState = JSON.stringify(store.getState())
+  // 为了防止 XSS 使用 serialize 提到 JSON.stringify
+  const initialState = serialize(store.getState())
 
   // 注入初始 store，当页面刷新时可以后端获取好返回给前端
   // <script>window.INITIAL_STATE=${initialState}</script>
