@@ -1,1 +1,0 @@
-# A simple study project of React SSR with Redux
